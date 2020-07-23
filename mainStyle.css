@@ -1,6 +1,45 @@
-.MainHead{
-  background-color: gray;
+body{
+  background-color: #282c34;
+  color: white;
   width: 80%;
-  height: 20vh;
   margin: auto;
+}
+.textBlock{
+  margin:auto;
+}
+.textBlock h1{
+  text-align: center;
+}
+.textBlock p{
+  text-align:justify;
+}
+@media only screen and (min-width: 901px){
+  .MainHead{
+    background-color: gray;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .MainHeadChild{
+  }
+  .mobileBreak{
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 900px){
+  .MainHead{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .MainHeadChild{
+  }
+  .mobileBreak{
+    visibility: visible;
+  }
 }
