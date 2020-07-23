@@ -4,6 +4,12 @@ body{
   width: 80%;
   margin: auto;
 }
+a:link{
+  color: white;
+}
+a:visited{
+  color: darkgray;
+}
 .textBlock{
   margin:auto;
 }
