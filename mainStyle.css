@@ -13,6 +13,18 @@ body{
 .textBlock p{
   text-align:justify;
 }
+.textxpicContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.textxpic{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 @media only screen and (min-width: 901px){
   .MainHead{
     background-color: gray;
@@ -20,7 +32,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   .MainHeadChild{

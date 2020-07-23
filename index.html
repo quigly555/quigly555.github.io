@@ -11,17 +11,17 @@
 
     <div class="MainHead">
 
-      <div class="MainHeadChild" style="flex:1;flex-basis:25%;height:100%;text-align:center">
+      <div class="MainHeadChild" style="order:1;height:100%;text-align:center">
         <img src="media\Me_Headshot-2_blueshift.png" style="height:100%">
       </div>
 
-      <div class="MainHeadChild" style="flex:2;text-align:center;">
+      <div class="MainHeadChild" style="order:2;text-align:center;">
         <h1><u>Quigly Dragotakes, Ph.D.</u></h1>
         <h2>Postdoctoral researcher in the Casadevall Lab</h2>
         <h2>Chief Scientific Officer of MelaTech LLC.</h2>
       </div>
 
-      <div class="MainHeadChild" style="flex:3;text-align:center;">
+      <div class="MainHeadChild" style="order:3;text-align:center;">
         <a href="https://twitter.com/dragotakes" target="_blank"><img src="./media/SocialMediaLogos/twitterLogo.jpg" height="50px"></a>
         <a href="https://www.linkedin.com/in/dragotakes/" target="_blank"><img src="./Media/SocialMediaLogos/linkedinLogo.png" height="50px"></a>
         <a href="https://orcid.org/0000-0003-4068-5828" target="_blank"><img src="./Media/SocialMediaLogos/OrcidLogo.png" height="50px"></a>
@@ -32,22 +32,82 @@
 
     <div class="mobileBreak"><hr></div>
 
-    <div style='text-align:center'>
-      <h1>Page Under Construction</h1>
-      <p>
-        This page is a constant work in progress that I keep adding to in my spare time or when I get bored.
-      </p>
+    <div class="textBlock" style='width:80%;'>
+      <h1>Bio</h1>
+      <div class="textxpicContainer">
+
+        <div class="textxpic" style="order:1">
+          <div class="textxpicChild" style="order:2;padding-left:20px">
+            <p>
+              I received my B.S. Biochemistry from Ithaca College in 2014 during which I worked in an organic synthesis lab studying bacterial quorum sensing generating and assaying potential small molecular inhibitors of the <em>V. fischeri</em> quorum sensing system. I also worked with Te Wen-Lo, PhD using CRISPR/Cas to study gene compensation in <em>C. briggsae</em>.
+            </p>
+          </div>
+          <div class="textxpicChild" style="order:1">
+            <img src="./media/EducationLogos/IthacaLogo.png" height=100px>
+          </div>
+        </div>
+
+        <div class="textxpic" style="order:1">
+          <div class="textxpicChild" style="order:1;padding-right:20px">
+            <p>
+              I worked as a Research Assistant in the Greengard Lab at The Rockefeller University from 2014-2016 studying late onset familial Alzheimer's Disease. Using RNAseq and collaborating with multiple human genome research groups we identified a gene potentially involved in AD pathology. I cloned the gene and many isoforms/cleavage products into vectors to analyze in transfected cell culture as well as raising and maintaining KO mouse colonies and generating knockdown mice via lentiviral vector brain injection.
+            </p>
+          </div>
+          <div class="textxpicChild" style="order:2">
+            <img src="./media/EducationLogos/RU-Logo.jpg" height=100px>
+          </div>
+        </div>
+
+        <div class="textxpic" style="order:1">
+          <div class="textxpicChild" style="order:2;padding-left:20px">
+            <p>
+              In 2016 I matriculated to the Johns Hopkins Bloomberg School of Public Health Molecular Microbiology and Immunology PhD program. I joined the laboratory of Arturo Casadevall and began researching host-pathogen interactions between <em>C. neoformans</em> and macrophages. I was involved in many areas of research, but my thesis specifically focused on establishing a macorphage phagolysosome acidification betting strategy, elucidating the mechanism of yeast transfer between macrophages, and working to link the two by showing cellular stress as a trigger for the transfer process.
+            </p>
+          </div>
+          <div class="textxpicChild" style="order:1">
+            <img src="./media/EducationLogos/BSPH-Logo.jpg" height=100px>
+          </div>
+        </div>
+
+        <div class="textxpic" style="order:1">
+          <div class="textxpicChild" style="order:1;padding-right:20px">
+            <p>
+              During my time in the Casadevall lab I also became involved with MelaTech LLC. I managed to send several melanin samples to the ISS and generate a few patents for practical uses of melanin biocomposites. We recently secured significant funding sources which is why I decided to work as a postdoc in the Casadevall lab to remain close to and involved in MelaTech.
+            </p>
+          </div>
+          <div class="textxpicChild" style="order:2">
+            <img src="./media/EducationLogos/MelaTech-Logo.png" height=100px>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <div class="mobileBreak"><hr></div>
 
-    <div class="textBlock" style='width:60%;'>
-      <h1>Bio</h1>
-      <p>
-        I received my B.S. Biochemistry from Ithaca College in 2014 during which I worked in an organic synthesis lab studying bacterial quorum sensing generating and assaying potential small molecular inhibitors of the <em>V. fischeri</em> quorum sensing system. I also worked with Te Wen-Lo, PhD using CRISPR/Cas to study gene compensation in <em>C. briggsae</em>.
-        <br><br>
-        I worked as a Research Assistant in the Greengard Lab at The Rockefeller University from 2014-2016 studying late onset familial Alzheimer's Disease. Using RNAseq and collaborating with multiple human genome research groups we identified a gene potentially involved in AD pathology. I cloned the gene and many isoforms/cleavage products into vectors to analyze in transfected cell culture as well as raising and maintaining KO mouse colonies and generating knockdown mice via lentiviral vector brain injection.
+    <div class="projectsContainer">
+      <div class="textBlock">
+        <h1>Side Projects</h1>
         <br>
+        <h2>AI Generated Research Articles</h2>
+        <p>
+          Using the GPT-2 architecture I trained a bot on ~10k open access PubMed research articles. The current iteration is a bot capable of generating a paper (title, abstract, intro, methods, results, discussion) and tweets the resulting paper.
+        </p>
+        <br>
+        <h2>Categorizing Articles as Nature/Science/Cell or not Based on Title Alone</h2>
+        <p>
+          Using a bag of words model I trained a bot to guess whether research articles were from NSC or not based only on the title. Surprisingly the categorizer has an accuracy from mid-70% to low-80%.
+        </p>
+      </div>
+    </div>
+
+    <div class="mobileBreak"><hr></div>
+
+    <div style='text-align:center'>
+      <h1>Page Under Construction</h1>
+      <p>
+        This page is a constant work in progress that I keep adding to in my spare time or when I get bored.
       </p>
     </div>
 
