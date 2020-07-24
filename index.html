@@ -5,11 +5,18 @@
     <meta charset="utf-8">
     <title>Q. Dragotakes</title>
     <link rel="stylesheet" type="text/css" href="mainStyle.css">
+
+    <div class="navBarContainer">
+      <a href="#Section-Home">Home</a>
+      <a href="#Section-Bio">Bio</a>
+      <a href="#Section-ResearchAreas">Research Areas</a>
+      <a href="#Section-SideProjects">Side Projects</a>
+    </div>
   </head>
 
   <body>
 
-    <div class="MainHead">
+    <div id="Section-Home" class="MainHead" style="">
 
       <div class="MainHeadChild" style="order:1;height:100%;text-align:center">
         <img src="media\Me_Headshot-2_blueshift.png" style="height:100%">
@@ -22,17 +29,22 @@
       </div>
 
       <div class="MainHeadChild" style="order:3;text-align:center;">
-        <a href="https://twitter.com/dragotakes" target="_blank"><img src="./media/SocialMediaLogos/twitterLogo.jpg" height="50px"></a>
-        <a href="https://www.linkedin.com/in/dragotakes/" target="_blank"><img src="./media/SocialMediaLogos/linkedinLogo.png" height="50px"></a>
-        <a href="https://orcid.org/0000-0003-4068-5828" target="_blank"><img src="./media/SocialMediaLogos/OrcidLogo.png" height="50px"></a>
-        <a href="https://github.com/quigly555/" target="_blank"><img src="./media/SocialMediaLogos/Github.png" height="50px"></a>
+        <div class="socialLinksContainer">
+          <div class="socialLinksContainer-Row">
+            <a href="https://twitter.com/dragotakes" target="_blank"><img src="./media/SocialMediaLogos/twitterLogo.jpg" alt="twitter link" height="50px"></a>
+            <a href="https://www.linkedin.com/in/dragotakes/" target="_blank"><img src="./media/SocialMediaLogos/linkedinLogo.png" alt="linkedin link" height="50px"></a>
+            <a href="https://orcid.org/0000-0003-4068-5828" target="_blank"><img src="./media/SocialMediaLogos/OrcidLogo.png" alt="ORCID link" height="50px"></a>
+            <a href="https://github.com/quigly555/" target="_blank"><img src="./media/SocialMediaLogos/Github.png" alt="Github link" height="50px"></a>
+            <a href="https://melatech.space/" target="_blank"><img src="./media/EducationLogos\MelaTech-Logo.png" alt="MelaTech Link" height="50px"></a>
+          </div>
+        </div>
       </div>
 
     </div>
 
     <div class="mobileBreak"><hr></div>
 
-    <div class="textBlock" style='width:80%;'>
+    <div id="Section-Bio" class="textBlock" style='width:80%;'>
       <h1>Bio</h1>
       <div class="textxpicContainer">
 
@@ -43,7 +55,7 @@
             </p>
           </div>
           <div class="textxpicChild" style="order:1">
-            <img src="./media/EducationLogos/IthacaLogo.png" height=100px>
+            <img src="./media/EducationLogos/IthacaLogo.png" alt="Ithaca College Logo" height=100px>
           </div>
         </div>
 
@@ -54,7 +66,7 @@
             </p>
           </div>
           <div class="textxpicChild" style="order:2">
-            <img src="./media/EducationLogos/RU-Logo.jpg" height=100px>
+            <img src="./media/EducationLogos/RU-Logo.jpg" alt="The Rockefeller University Logo" height=100px>
           </div>
         </div>
 
@@ -65,7 +77,7 @@
             </p>
           </div>
           <div class="textxpicChild" style="order:1">
-            <img src="./media/EducationLogos/BSPH-Logo.jpg" height=100px>
+            <img src="./media/EducationLogos/BSPH-Logo.jpg" alt="Johns Hopkins Bloomberg School of Public Health Logo" height=100px>
           </div>
         </div>
 
@@ -76,7 +88,7 @@
             </p>
           </div>
           <div class="textxpicChild" style="order:2">
-            <img src="./media/EducationLogos/MelaTech-Logo.png" height=100px>
+            <img src="./media/EducationLogos/MelaTech-Logo.png" alt="MelaTech LLC Logo" height=100px>
           </div>
         </div>
 
@@ -86,23 +98,91 @@
 
     <div class="mobileBreak"><hr></div>
 
-    <div class="projectsContainer">
+    <div id="Section-ResearchAreas" class="researchContainer">
       <div class="textBlock">
-        <h1>Side Projects</h1>
-        <br>
-        <h2>AI Generated Research Articles</h2>
-        <p>
-          Using the GPT-2 architecture I trained a bot on ~10k open access PubMed research articles. The current iteration is a bot capable of generating a paper (title, abstract, intro, methods, results, discussion) and tweets the resulting paper. The <a href="https://github.com/quigly555/SciBot" target="_blank">git repo</a> and <a href="https://twitter.com/quaglee" target="_blank">twitter account</a> are public.
-        </p>
-        <br>
-        <h2>Categorizing Articles as Nature/Science/Cell or not Based on Title Alone</h2>
-        <p>
-          Using a bag of words model I trained a bot to guess whether research articles were from NSC or not based only on the title. Surprisingly the categorizer has an accuracy from mid-70% to low-80%.
-        </p>
+        <h1>Research Areas</h1>
       </div>
+
+      <div class="researchContainerChild">
+        <div class="researchItem">
+          <h3>Dragotcytosis</h3>
+          <p>
+            I elucidated the mechanism by which <em>C. neoformans</em> can non-lytically transfer between host macrophages. Published in the <a href="https://www.jimmunol.org/content/early/2019/03/14/jimmunol.1801118" target="_blank">Journal of Immunology</a>.
+          </p>
+          <img src="./media/Science/Model.jpg" width=100%>
+        </div>
+
+        <div class="mobilepadding"></div>
+
+        <div class="researchItem">
+          <h3>Macrophage Bet Hedging in the Phagolysosome</h3>
+          <p>
+            I discovered that macrophages hedge their bets in terms of phagolysosomal pH at the cellular level. Using a stochastic acidification method the macrophages will increase the variation in possible final pH and decrease the variation in long term population fitness. Published in the <a href="https://www.jci.org/articles/view/133938" target="_blank">Journal of Clinical Investigation</a>
+          </p>
+          <img src="./media/Science/Betting.jpg" width=100%>
+        </div>
+      </div>
+
+      <div class="padding"></div>
+
+      <div class="researchContainerChild">
+        <div class="researchItem">
+          <h3>Automating Data Analysis</h3>
+          <p>
+            I'm as capable a programmer as you can get without finding someone with an actual CS background. I spend most of my time in R, python, and MATLAB but am comfortable with anything regarding computers and good at finding relevant Stack Overflow threads when I need to learn a new application.
+            <br><br>
+            I wrote an image analysis script using a combination of Python and MATLAB to automatically measure <em>C. neoformans</em> capsule and cell body sizes from India Ink slides. These measurements are tedious and time consuming to do manually, whereas my script allows rapid measurement of thousands of cells with minimal labor. Published in the <a href="https://www.jove.com/t/56957/automated-measurement-cryptococcal-species-polysaccharide-capsule" target="_blank">Journal of Visualized Experiments</a>.
+          </p>
+          <img src="./media/Science/QCA.jpg" width=100%>
+        </div>
+
+        <div class="mobilepadding"></div>
+
+        <div class="researchItem">
+          <h3>Melanin Based Biotechnologies</h3>
+          <p>
+            My work with MelaTech LLC. centers around characterizing melanin and developing practical uses for the biocompound. We have several patents relating to the protective capabilities of this fascinating molecule and work closely with NASA to develop new space technologies. Several of our samples have been sent to the ISS for further testing.
+          </p>
+          <img src="./media/Science/melaninPowderSun.jpg" width=100%>
+        </div>
+      </div>
+
     </div>
 
     <div class="mobileBreak"><hr></div>
+
+    <h1 style="text-align:center;">Other Projects</h1>
+    <div id="Section-SideProjects" class="textxpicContainer">
+
+      <div class="textxpic" style="order:1;">
+        <div class="textxpicChild" style="order:2;flex:2;padding-left:20px">
+          <h3>GPT-2 Science Bot</h3>
+          <p>
+            Using the GPT-2 architecture I trained a bot on ~10k open access PubMed research articles. The current iteration is a bot capable of generating a paper (title, abstract, intro, methods, results, discussion) and tweets the resulting paper. The <a href="https://github.com/quigly555/SciBot" target="_blank">git repo</a> and <a href="https://twitter.com/quaglee" target="_blank">twitter account</a> are public.
+          </p>
+        </div>
+        <div class="textxpicChild" style="order:1;flex:1;text-align:center;">
+          <img src="./media/Science/TwitterPicture.jpg" alt="GPT-2 Bot Twitter Profile" width=50%>
+        </div>
+      </div>
+
+      <div class="textxpic" style="order:1">
+        <div class="textxpicChild" style="order:2;flex:2;padding-left:20px">
+          <h3>Categorizing Articles as Nature/Science/Cell or not Based on Title Alone</h3>
+          <p>
+            Using a bag of words model I trained a bot to guess whether research articles were from NSC or not based only on the title. Surprisingly the categorizer has an accuracy from mid-70% to low-80%.
+          </p>
+        </div>
+        <div class="textxpicChild" style="order:1;flex:1;text-align:center;">
+          <img src="./media/Science/Titles.png" alt="Title AI Results" width=100%>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="height:50px;padding-top:50px">
+      <hr>
+    </div>
 
     <div style='text-align:center'>
       <h1>Page Under Construction</h1>
@@ -110,6 +190,30 @@
         This page is a constant work in progress that I keep adding to in my spare time or when I get bored.
       </p>
     </div>
+
+  <script>
+    //Script was written by z3r0 on StackOverflow
+    //Get all the hyperlink elements
+    var links = document.getElementsByTagName("a");
+
+    //Browse the previously created array
+    Array.prototype.forEach.call(links, function(elem, index) {
+      //Get the hyperlink target and if it refers to an id go inside condition
+      var elemAttr = elem.getAttribute("href");
+      if(elemAttr && elemAttr.includes("#")) {
+        //Replace the regular action with a scrolling to target on click
+        elem.addEventListener("click", function(ev) {
+          ev.preventDefault();
+          //Scroll to the target element using replace() and regex to find the href's target id
+          document.getElementById(elemAttr.replace(/#/g, "")).scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest"
+              });
+        });
+      }
+    });
+  </script>
 
   </body>
 

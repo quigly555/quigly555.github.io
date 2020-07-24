@@ -10,10 +10,37 @@ a:link{
 a:visited{
   color: darkgray;
 }
+.navBarContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+}
+.navBarContainer a{
+  width: 25%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid gray;
+  border-radius: 16px;
+  text-decoration: none;
+}
+.navBarContainer a:hover{
+  background-color: purple;
+}
+.navBarContainer a:visited{
+  color: white;
+}
 .textBlock{
   margin:auto;
+  width: 100%;
 }
 .textBlock h1{
+  text-align: center;
+}
+.textBlock h3{
   text-align: center;
 }
 .textBlock p{
@@ -31,6 +58,23 @@ a:visited{
   justify-content: space-between;
   align-items: center;
 }
+.researchContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.researchItem{
+  border: 4px solid white;
+  border-style: double;
+  text-align: center;
+}
+.researchItem p{
+  margin: 10px;
+  text-align: justify;
+}
+.padding{
+  height: 20px;
+}
 @media only screen and (min-width: 901px){
   .MainHead{
     background-color: gray;
@@ -46,6 +90,20 @@ a:visited{
   .mobileBreak{
     visibility: hidden;
   }
+  .mobilepadding{
+    width: 20px;
+  }
+  .researchContainerChild{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .researchItem{
+    flex: 1;
+  }
+  .researchItem h3{
+    height: 50px;
+  }
 }
 @media only screen and (max-width: 900px){
   .MainHead{
@@ -59,5 +117,15 @@ a:visited{
   }
   .mobileBreak{
     visibility: visible;
+  }
+  .mobilepadding{
+    height: 20px;
+    visibility: visible;
+  }
+  .researchContainerChild{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
