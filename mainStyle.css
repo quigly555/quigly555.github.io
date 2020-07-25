@@ -3,6 +3,7 @@ body{
   color: white;
   width: 80%;
   margin: auto;
+  margin-top: 50px;
 }
 a:link{
   color: white;
@@ -16,6 +17,10 @@ a:visited{
   align-items: center;
   justify-content: space-around;
   height: 50px;
+  position: fixed;
+  top: 0;
+  width: 80%;
+  background-color: #282c34;
 }
 .navBarContainer a{
   width: 25%;
@@ -32,6 +37,9 @@ a:visited{
 }
 .navBarContainer a:visited{
   color: white;
+}
+.navPadding{
+  height:20px;
 }
 .textBlock{
   margin:auto;
@@ -75,7 +83,17 @@ a:visited{
 .padding{
   height: 20px;
 }
+.socialLinksContainer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.socialLinksContainer-Row{
+}
 @media only screen and (min-width: 901px){
+  body{
+    max-width: 1000px;
+  }
   .MainHead{
     background-color: gray;
     height: 320px;
@@ -86,6 +104,7 @@ a:visited{
     align-items: center;
   }
   .MainHeadChild{
+    flex: 1;
   }
   .mobileBreak{
     visibility: hidden;
