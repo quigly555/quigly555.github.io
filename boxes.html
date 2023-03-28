@@ -18,7 +18,7 @@
     <!-- Box content will be dynamically generated here -->
   </div>
 
-  <div id="container" style='justify-content:center;text-align:center'>
+  <div id="container" style='justify-content:center;text-align:center;position:fixed;bottom:50%;right:5%'>
     <button id="generate-btn">Generate More Boxes</button>
   </div>
 
@@ -122,7 +122,8 @@
 
     $("#generate-btn").click(function() {
       for (var i = 0; i < 10; i++) {
-        $("#container").append(generateBox());
+        //$("#container").append(generateBox());
+        generateBoxes(10);
       }
     });
   </script>
