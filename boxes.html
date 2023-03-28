@@ -19,7 +19,7 @@
   </div>
 
   <div id="container" style='justify-content:center;text-align:center;position:fixed;bottom:50%;right:2%;'>
-    <button id="generate-btn" style="font-size:30px">Generate More Boxes</button>
+    <button id="generate-btn" style="font-size:30px">More Boxes</button>
   </div>
 
 
@@ -44,7 +44,7 @@
 
       // Generate a random shape using a combination of CSS transformations and SVG shapes
       var shape = "";
-      var shapeType = Math.floor(Math.random() * 5); // Choose a random shape type (0 to 3)
+      var shapeType = Math.floor(Math.random() * 7); // Choose a random shape type (0 to 3)
       switch (shapeType) {
         case 0: // Square
           shape = "polygon";
@@ -61,7 +61,10 @@
         case 4: // Pentagon
           shape = "polygon";
           break;
-        case 5: // Pentagon
+        case 5: // Star
+          shape = "polygon";
+          break;
+        case 6: // Parallelogram
           shape = "polygon";
           break;
       }
@@ -83,8 +86,12 @@
           box.find("polygon").attr({"points": "50 0, 0 100, 100 100"});
         } else if (shapeType === 4) { // Pentagon
           box.find("polygon").attr({"points": "50,0 0,38.27 19.64,100 80.36,100 100,38.27"});
-        } else if (shapeType === 0) { // Pentagon
+        } else if (shapeType === 0) { // Rect
           box.find("polygon").attr({"points": "0 0, 100 0, 100 100, 0 100"});
+        } else if (shapeType === 5) { // Star
+          box.find("polygon").attr({"points": "50,0 21,100 100,35 0,35 79,100"});
+        } else if (shapeType === 6) { // Parallelogram
+          box.find("polygon").attr({"points": "0,0  100, 30  100, 100  0, 70"});
         }
       }
       //box.find("svg").css({"width": size, "height": size}); // Set the dimensions of the SVG shape to match the size of the box
