@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Infinite Scroll Random Boxes</title>
+  <style>
+    /* Define the box CSS */
+    .box {
+      width: 90%;
+      height: 500px;
+      margin: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="box-container">
+    <!-- Box content will be dynamically generated here -->
+  </div>
+
+  <!-- Load the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // Define a function to generate random colors
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Define a function to generate a box with a random color
+    function generateBox() {
+      var box = $("<div class='box'></div>");
+      var color = getRandomColor();
+      box.css("background-color", color);
+      return box;
+    }
+
+    // Define a function to generate a batch of boxes
+    function generateBoxes(count) {
+      for (var i = 0; i < count; i++) {
+        var box = generateBox();
+        $("#box-container").append(box);
+      }
+    }
+
+    // Generate the initial batch of boxes
+    generateBoxes(30);
+
+    // Define a function to check if the user has scrolled to the bottom of the page
+    function isScrollBottom() {
+      return $(window).scrollTop() + $(window).height() == $(document).height();
+    }
+
+    // Define a function to load more boxes when the user reaches the bottom of the page
+    function loadMoreBoxes() {
+      if (isScrollBottom()) {
+        generateBoxes(10);
+      }
+    }
+
+    // Load more boxes when the user scrolls to the bottom of the page
+    $(window).scroll(loadMoreBoxes);
+  </script>
+</body>
+</html>
