@@ -18,6 +18,11 @@
     <!-- Box content will be dynamically generated here -->
   </div>
 
+  <div id="container" style='justify-content:center;text-align:center'>
+    <button id="generate-btn">Generate More Boxes</button>
+  </div>
+
+
   <!-- Load the jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
@@ -114,6 +119,12 @@
 
     // Load more boxes when the user scrolls to the bottom of the page
     $(window).scroll(loadMoreBoxes);
+
+    $("#generate-btn").click(function() {
+      for (var i = 0; i < 10; i++) {
+        $("#container").append(generateBox());
+      }
+    });
   </script>
 </body>
 </html>
