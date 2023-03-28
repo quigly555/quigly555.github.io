@@ -2,18 +2,19 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Infinite Scroll Random Boxes</title>
+  <title>Anti-Doom Scrolling</title>
   <style>
     /* Define the box CSS */
     .box {
       width: 100%;
       height: 500px;
-      display: inline-block;
+      display: block;
+      margin: auto;
     }
   </style>
 </head>
 <body>
-  <div id="box-container">
+  <div id="box-container" style="width:100%;">
     <!-- Box content will be dynamically generated here -->
   </div>
 
@@ -30,13 +31,63 @@
       return color;
     }
 
-    // Define a function to generate a box with a random color
     function generateBox() {
       var box = $("<div class='box'></div>");
       var color = getRandomColor();
-      box.css("background-color", color);
+      //var size = Math.floor(Math.random() * 201) + 100; // Generate a random size between 100 and 300 pixels
+      //var size = 100%;
+
+      // Generate a random shape using a combination of CSS transformations and SVG shapes
+      var shape = "";
+      var shapeType = Math.floor(Math.random() * 5); // Choose a random shape type (0 to 3)
+      switch (shapeType) {
+        case 0: // Square
+          shape = "polygon";
+          break;
+        case 1: // Circle
+          shape = "circle";
+          break;
+        case 2: // Triangle Down
+          shape = "polygon";
+          break;
+        case 3: // Triangle Up
+          shape = "polygon";
+          break;
+        case 4: // Pentagon
+          shape = "polygon";
+          break;
+        case 5: // Pentagon
+          shape = "polygon";
+          break;
+      }
+
+      // Apply the shape and color to the box
+      box.css({
+        "position": "relative",
+        "overflow": "hidden",
+        "width": "100%",
+        "height": "500px"
+      });
+      box.html("<svg viewbox = '0 0 100 100' style='position:absolute;width:100%;height:100%;top:0;left:0'><" + shape + " fill='" + color + "'/></svg>");
+      if (shape === "circle") {
+        box.find("circle").attr({"r": "50%", "cx": "50%", "cy": "50%"});
+      } else if (shape === "polygon") {
+        if (shapeType === 2) { // Triangle Down
+          box.find("polygon").attr({"points": "0 0, 100 0, 50 100"});
+        } else if (shapeType === 3) { // Triangle Up
+          box.find("polygon").attr({"points": "50 0, 0 100, 100 100"});
+        } else if (shapeType === 4) { // Pentagon
+          box.find("polygon").attr({"points": "50,0 0,38.27 19.64,100 80.36,100 100,38.27"});
+        } else if (shapeType === 0) { // Pentagon
+          box.find("polygon").attr({"points": "0 0, 100 0, 100 100, 0 100"});
+        }
+      }
+      //box.find("svg").css({"width": size, "height": size}); // Set the dimensions of the SVG shape to match the size of the box
+
       return box;
     }
+
+
 
     // Define a function to generate a batch of boxes
     function generateBoxes(count) {
@@ -51,7 +102,7 @@
 
     // Define a function to check if the user has scrolled to the bottom of the page
     function isScrollBottom() {
-      return $(window).scrollTop() + $(window).height() == $(document).height();
+      return $(window).scrollTop() + $(window).height() >= $(document).height();
     }
 
     // Define a function to load more boxes when the user reaches the bottom of the page
