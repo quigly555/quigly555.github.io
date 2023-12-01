@@ -84,6 +84,14 @@ a:visited{
 .padding{
   height: 20px;
 }
+.publicationBlock h3{
+  margin: 0px;
+  padding: 0px;
+}
+.publicationBlock p{
+  margin: 0px;
+  padding: 0px;
+}
 .socialLinksContainer{
   display: flex;
   flex-direction: column;
